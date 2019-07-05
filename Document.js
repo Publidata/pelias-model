@@ -42,6 +42,7 @@ function Document( source, layer, source_id ){
 
   // define default post-processing scripts
   this.addPostProcessingScript( require('./post/intersections') );
+  this.addPostProcessingScript( require('./post/seperable_street_names').post );
   this.addPostProcessingScript( require('./post/deduplication') );
 
   // mandatory properties
