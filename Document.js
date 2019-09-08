@@ -152,6 +152,7 @@ Document.prototype.toESDocument = function() {
 Document.prototype.setId = function( id ){
 
   id = transform.stringify(id);
+  id = id.replace(/\//g, '-') // Replace forward slash by dash to avoid Elasticsearch URI conflict 
   validate.type('string', id);
   validate.truthy(id);
 
